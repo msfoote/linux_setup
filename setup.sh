@@ -13,7 +13,7 @@ match=$(ip link  | grep -oP '\b(e\S+):')
 # Confirm the ip address is correct
 read -p "Please confirm you wish to use $ip_address? (Y/N): " response
 response_lower=$(echo "$response" | tr '[:upper:]' '[:lower:]')
-if [ "$response_lower" ==  y*]; then
+if [[ "$response_lower" ==  y*]]; then
     # Copy the template and replace the appropriate values
     cp 'templates/00-installer-config.yaml.jinja' '00-installer-config.yaml'
     sed -i "s/{{ network_device_name }}/$match/g" 00-installer-config.yaml

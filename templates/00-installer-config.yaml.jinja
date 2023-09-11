@@ -1,14 +1,15 @@
+# This is based off a template located @ https://github.com/msfoote/linux_setup/blob/main/templates/00-installer-config.yaml.jinja
 network:
-    ethernets:
+  ethernets:
     {{ network_device_name }}
+      addresses:
+      - {{ ip_address }}/24
+      nameservers:
         addresses:
-        - {{ ip_address }}/24
-        nameservers:
-            addresses:
-            - 8.8.8.8
-            - 8.8.4.4
-            search: []
-        routes:
-        - to: default
-            via: 192.168.1.1
-    version: 2
+        - 8.8.8.8
+        - 8.8.4.4
+        search: []
+      routes:
+      - to: default
+        via: 192.168.1.1
+  version: 2

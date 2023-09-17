@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Prompt the user to enter a hostname
+read -p "Enter a desired hostname: " hostname
+
+sudo hostnamectl set-hostname $host_name
+
 # Prompt the user to enter an IP address
 read -p "Enter an IP address: " ip_address
 

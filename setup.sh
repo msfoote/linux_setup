@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Prompt the user to enter a hostname
-read -p "Enter a desired hostname: " hostname
+read -p "Enter a desired hostname: " host_name
 
 sudo hostnamectl set-hostname $host_name
 
